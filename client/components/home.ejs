@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title>Personal Portfolio </title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="../assets/img/favicon.png" rel="icon">
+        <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+      
+        <!-- Template Main CSS File -->
+        <link href="../css/two.css" rel="stylesheet">
+      
+        <!-- =======================================================
+        * Template Name: iPortfolio - v1.5.1
+        * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+      </head>
+      <body>
+
+        <!-- ======= Mobile nav toggle button ======= -->
+        <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+      
+        <!-- ======= Header ======= -->
+        <header id="header">
+          <div class="d-flex flex-column">
+      
+            <div class="profile">
+              <% var i=1;list.forEach(list => {%>
+             <!--<img src="../assets/img/team/sphm.jpg" alt="" class="img-fluid rounded-circle">--> 
+             <br/><br/><br/>
+              <h1 class="text-light"><%= list.name%></h1>
+              <div class="social-links mt-3 text-center">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+      
+            <nav class="nav-menu">
+              <ul>
+
+                <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="#facts"><i class="bx bx-file-blank"></i> Facts</a></li>
+                <li><a href="#skills"><i class="bx bx-file-blank"></i>Skills</a></li>
+                <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                
+      
+              </ul>
+            </nav><!-- .nav-menu -->
+            <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+      
+          </div>
+        </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          
+        </div>
+
+        <div class="row">
+          <!--<div class="col-lg-4" data-aos="fade-right">
+            <img src="../assets/img/team/sphm.jpg" class="img-fluid" alt="">
+          </div>-->
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <p class="font-italic">
+                I am highly motivated and enthusiastic always willing to learn,work.well with others as well as efficiently on my own.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> <%= list.dateofbirth%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> <%= list.mobilenumber%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> <%= list.address%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>LinkedIn ID:</strong> <%= list.linkedinid%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Git ID:</strong> <%= list.githubid%></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>  <%= list.age%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong>  <%= list.qualification%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong>  <%= list.mobilenumber%></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong>  <%= list.freelance%></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Facts</h2>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="icofont-document-folder"></i>
+              <span data-toggle="counter-up"> <%= list.projects%></span>
+              <p><strong>Projects</strong> Total Projects Worked</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="icofont-document-folder"></i>
+              <span data-toggle="counter-up"> <%= list.certifications%></span>
+              <p><strong>Certifications</strong> Total Certifications</p>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>I really belive everyone has a talent,ability, or skill that  he can mine to support himself and to succedd in life  .</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill"> <%= list.skills%> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">PHP <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4> <%= list.name%></h4>
+              <ul>
+                <li> <%= list.address%></li>
+                <li> <%= list.mobilenumber%></li>
+                <li> <%= list.email%></li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4> <%= list.qualification%>  </h4>
+              <h5><%= list.CollegeName%> </h5>
+              <p><em><%= list.graduationyear%> </em></p>
+            </div>
+           
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4><%= list.Companyname%> </h4>
+              <h5><%= list.experience%> year Experience</h5>
+              <p><em><%= list.designation%>  </em></p>
+
+            </div>
+            
+          </div>
+        </div>
+        <% })%>
+      </div>
+    </section><!-- End Resume Section -->
+
+
+   
+    
+
+   
+
+  </main><!-- End #main -->
+
+ 
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/typed.js/typed.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+        </body>
+        </html>
