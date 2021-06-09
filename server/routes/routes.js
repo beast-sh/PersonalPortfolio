@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var Expense = require('../../models/Expense');
+var contact = require('../../models/Contact');
+var nodemailer = require('nodemailer');
+var JSAlert = require("js-alert");
+const popup = require('node-popup');
+
+
 router.get('/', function(req, res){
   res.render('index')
 });
@@ -34,29 +40,6 @@ expense.save(function(err) {
         res.send('user successfully added!');
   });
 })
-/*router.route('/update')
-.post(function(req, res) {
- const doc = {
-     description: req.body.description,
-     amount: req.body.amount,
-     month: req.body.month,
-     year: req.body.year
- };
- console.log(doc);
-  Expense.update({_id: req.body._id}, doc, function(err, result) {
-      if (err)
-        res.send(err);
-      res.send('Expense successfully updated!');
-  });
-});
-router.get('/delete', function(req, res){
- var id = req.query.id;
- Expense.find({_id: id}).remove().exec(function(err, expense) {
-  if(err)
-   res.send(err)
-  res.send('Expense successfully deleted!');
- })
-});*/
 router.get('/login',function(req, res) {
   userList = []
  var monthRec = req.query.email;
@@ -71,26 +54,51 @@ router.get('/login',function(req, res) {
  
 });
 
-/*// show login form
-router.get("/login", (req, res) => res.render("login", { page: "login" }));
+router.route('/contact')
+.post(function(req,res) {
 
-// login logic: app.post("/login", middleware, callback)
-router.post("/login", (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
-        if (err) { return next(err); }
-        if (!user) {
-            req.flash("error", "Invalid username or password.." + err);
-            return res.redirect('login');
-        }
-        req.logIn(user, err => {
-            if (err) { return next(err); }
-            let redirectTo = req.session.redirectTo ? req.session.redirectTo : '/';
-            delete req.session.redirectTo;
-            req.flash("success", "Good to see you again, " + user.name);
-            res.redirect(redirectTo);
-        });
-    })(req, res, next);
-});*/
+
+ var cont = new contact();
+ cont.name = req.body.name;
+ cont.email = req.body.email;
+ cont.sub = req.body.subject;
+ cont.msg = req.body.message;
+ 
+ cont.save(function(err) {
+      if (err)
+          res.send(err);
+        res.send('Request Sent  successfully!');
+      
+  });
+  let transporter = nodemailer.createTransport({
+    port: 465,               
+    host: "smtp.gmail.com",
+       auth: {
+            user: 'noreplypersonalportfolio',
+            pass: 'Death1234@',
+         },
+    secure: true,
+  })
+
+  let mailOptions = {
+      from: 'noreplypersonalportfolio',
+      to: req.body.email,
+      subject: req.body.subject,
+      
+      html:'<b>Concern Raised:'+req.body.subject+'<br><b>Deatils:<b/>'+req.body.message+'<br><b>Thank you for contacting us. We are looking into your concern.</b><br/>'
+  }
+
+  transporter.sendMail(mailOptions, function (err, res) {
+      if(err){
+          return console.log(err);
+      } else {
+           return console.log('Email Sent');
+      }
+  })
+
+ 
+})
+
 
 
 

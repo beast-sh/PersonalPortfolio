@@ -3,6 +3,7 @@ import {Button} from 'react-bootstrap';
 import Modal from 'react-modal';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+
 var querystring = require('querystring');
 class Add extends React.Component {
   constructor() {
@@ -104,6 +105,7 @@ class Add extends React.Component {
       }
   onClick(e) {
         this.insertNewExpense(this);
+        
       }
   insertNewExpense(e) {
         axios.post('/insert',
@@ -231,7 +233,7 @@ class Add extends React.Component {
      if(this.state.messageFromServer == ''){
         return (
           <div>
-        <Button bsStyle="success" bsSize="small" onClick={this.openModal} > Register New User</Button>
+        <Button bsStyle="success" bsSize="large" onClick={this.openModal} > Register New User</Button>
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
@@ -241,26 +243,26 @@ class Add extends React.Component {
          <Button bsStyle="danger" bsSize="mini" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove"></span></Button>
         </Link><br/>
   <fieldset>
-         <label for="name">Name:</label><input type="text" id="name" name="name" value={this.state.name} onChange={this.handleTextChange} required></input>
-         <label for="email">Email:</label><input type="text" id="email" name="email" value={this.state.email} onChange={this.handleTextChange} required></input>
-         <label for="password">password:</label><input type="password" id="password" name="password" value={this.state.password} onChange={this.handleTextChange} required></input>
+         <label for="name">Name:</label><input type="text" id="name" name="name" value={this.state.name} onChange={this.handleTextChange} placeholder="Enter Name"  required="required" ></input>
+         <label for="email">Email:</label><input type="text" id="email" name="email" value={this.state.email} onChange={this.handleTextChange} aria-describedby="emailHelp" placeholder="Enter email" required></input>
+         <label for="password">password:</label><input type="password" id="password" name="password" value={this.state.password} onChange={this.handleTextChange}  placeholder="Enter Password" required></input>
          <label for="dob">Date of Birth:</label><input type="date" id="dob" name="dob" value={this.state.dob} onChange={this.handleTextChange} required></input>
-         <label for="age">age:</label><input type="text" id="age" name="age" value={this.state.age} onChange={this.handleTextChange} required></input>
-         <label for="qual">Qualification:</label><input type="text" id="qual" name="qual" value={this.state.qual} onChange={this.handleTextChange} required></input>
-         <label for="clgname">CollegeName:</label><input type="text" id="clgname" name="clgname" value={this.state.clgname} onChange={this.handleTextChange} required></input>
+         <label for="age">age:</label><input type="text" id="age" name="age" value={this.state.age} onChange={this.handleTextChange} placeholder="Enter age" required></input>
+         <label for="qual">Qualification:</label><input type="text" id="qual" name="qual" value={this.state.qual} onChange={this.handleTextChange}  placeholder="Enter Qualification" required></input>
+         <label for="clgname">CollegeName:</label><input type="text" id="clgname" name="clgname" value={this.state.clgname} onChange={this.handleTextChange}  placeholder="Enter College Name" required></input>
          <label for="gy">Graduation Year:</label><input type="date" id="gy" name="gy" value={this.state.gy} onChange={this.handleTextChange} required></input>
         
-         <label for="cmpname">Company Name:</label><input type="text" id="cmpname" name="cmpname" value={this.state.cmpname} onChange={this.handleTextChange} required></input>
-         <label for="exp">Experience:</label><input type="text" id="exp" name="exp" value={this.state.exp} onChange={this.handleTextChange} required></input>
-         <label for="desg">Designation:</label><input type="text" id="desg" name="desg" value={this.state.desg} onChange={this.handleTextChange} required></input>
-         <label for="proj">Projects:</label><input type="text" id="proj" name="proj" value={this.state.proj} onChange={this.handleTextChange} required></input>
-         <label for="cert">Certifications:</label><input type="text" id="cert" name="cert" value={this.state.cert} onChange={this.handleTextChange} required></input>
+         <label for="cmpname">Company Name:</label><input type="text" id="cmpname" name="cmpname" value={this.state.cmpname} onChange={this.handleTextChange} placeholder="Enter Company Name" required></input>
+         <label for="exp">Experience:</label><input type="text" id="exp" name="exp" value={this.state.exp} onChange={this.handleTextChange} placeholder="Enter Experience in years" required></input>
+         <label for="desg">Designation:</label><input type="text" id="desg" name="desg" value={this.state.desg} onChange={this.handleTextChange} placeholder="Enter Designation" required></input>
+         <label for="proj">Projects:</label><input type="text" id="proj" name="proj" value={this.state.proj} onChange={this.handleTextChange} placeholder="Enter projects done" required></input>
+         <label for="cert">Certifications:</label><input type="text" id="cert" name="cert" value={this.state.cert} onChange={this.handleTextChange} placeholder="Enter Certifications done" required></input>
          
-        <label for="mno">Mobile Number:</label><input type="text" id="mno" name="mno" value={this.state.mno} onChange={this.handleTextChange} required></input>
-        <label for="addr">Address:</label><input type="text" id="addr" name="addr" value={this.state.addr} onChange={this.handleTextChange} required></input>
-        <label for="gid">Githubid:</label><input type="text" id="gid" name="gid" value={this.state.gid} onChange={this.handleTextChange} required></input>
-        <label for="lid">Linkedin Id:</label><input type="text" id="lid" name="lid" value={this.state.lid} onChange={this.handleTextChange} required></input>
-        <label for="Gender">Gender:</label><select id="Gender" name="Gender" value={this.state.Gender} onChange={this.handleSelectChange} >
+        <label for="mno">Mobile Number:</label><input type="text" id="mno" name="mno" value={this.state.mno} onChange={this.handleTextChange} placeholder="Enter Mobile Number" required></input>
+        <label for="addr">Address:</label><input type="text" id="addr" name="addr" value={this.state.addr} onChange={this.handleTextChange} placeholder="Enter  permanent Address" required></input>
+        <label for="gid">Githubid:</label><input type="text" id="gid" name="gid" value={this.state.gid} onChange={this.handleTextChange}  placeholder="Enter github Id" required></input>
+        <label for="lid">Linkedin Id:</label><input type="text" id="lid" name="lid" value={this.state.lid} onChange={this.handleTextChange} placeholder="Enter LinkedIn Id" required></input>
+        <label for="Gender">Gender:</label><select id="Gender" name="Gender" value={this.state.Gender} onChange={this.handleSelectChange}  >
               <option value="male" id="male">Male</option>
               <option value="female" id="female">Female</option>
               <option value="oth" id="oth">Others</option>
