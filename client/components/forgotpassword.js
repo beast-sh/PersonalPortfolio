@@ -126,4 +126,4 @@ class ForgotPassword extends React.Component {
       }
      }
   }
-  export default Add;
+  export default ForgotPassword;
