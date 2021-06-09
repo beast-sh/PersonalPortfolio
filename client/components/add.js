@@ -142,7 +142,7 @@ class Add extends React.Component {
         });
       }
   handleTextChange(e) {
-        if (e.target.name == "name") {
+        if (e.target.name === "name") {
           this.setState({
             name: e.target.value
           });
@@ -243,7 +243,7 @@ class Add extends React.Component {
          <Button bsStyle="danger" bsSize="mini" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove"></span></Button>
         </Link><br/>
   <fieldset>
-         <label for="name">Name:</label><input type="text" id="name" name="name" value={this.state.name} onChange={this.handleTextChange} placeholder="Enter Name"  required="required" ></input>
+         <label for="name">Name:</label><input type="text" id="name" name="name" value={this.state.name} onChange={this.handleTextChange} placeholder="Enter Name"  required></input>
          <label for="email">Email:</label><input type="text" id="email" name="email" value={this.state.email} onChange={this.handleTextChange} aria-describedby="emailHelp" placeholder="Enter email" required></input>
          <label for="password">password:</label><input type="password" id="password" name="password" value={this.state.password} onChange={this.handleTextChange}  placeholder="Enter Password" required></input>
          <label for="dob">Date of Birth:</label><input type="date" id="dob" name="dob" value={this.state.dob} onChange={this.handleTextChange} required></input>

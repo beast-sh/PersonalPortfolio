@@ -4,8 +4,10 @@ var bodyParser = require('body-parser');
 var Expense = require('../../models/Expense');
 var contact = require('../../models/Contact');
 var nodemailer = require('nodemailer');
-var JSAlert = require("js-alert");
+/*var JSAlert = require("js-alert");
 const popup = require('node-popup');
+const flash = require('express-flash-notification');*/
+const Window = require('window');
 
 
 router.get('/', function(req, res){
@@ -34,12 +36,19 @@ router.route('/insert')
   expense.address = req.body.addr;
   expense.githubid = req.body.gid;
   expense.linkedinid = req.body.lid;
-expense.save(function(err) {
+  Expense.find({$and: [ {email: req.body.email}]}, function(err, expenses) {
+  if(expenses.length){
+	res.send('user already exits Please Login!');
+  }else{
+	expense.save(function(err) {
       if (err)
           res.send(err);
         res.send('user successfully added!');
   });
+  }
+  });  
 })
+
 router.get('/login',function(req, res) {
   userList = []
  var monthRec = req.query.email;
@@ -48,8 +57,15 @@ router.get('/login',function(req, res) {
  Expense.find({$and: [ {email: monthRec}, {password: yearRec}]}, function(err, expenses) {
    if (err)
     res.send(err);
-   
-   res.render("home", { 'list': expenses });
+   if(expenses.length){
+      res.render("home", { 'list': expenses });
+   }else{
+     //JSAlert.alert("Please Check your emial and password.");
+     //popup.alert('Please Check your email and password');
+    // req.flash('info', 'invalid username or password');
+      res.send("Invalid username and password");
+   }
+  
   });
  
 });
@@ -99,7 +115,10 @@ router.route('/contact')
  
 })
 
-
+router.get("/logout", (req, res) => {
+    
+    res.redirect("/");
+});
 
 
 module.exports = router;
