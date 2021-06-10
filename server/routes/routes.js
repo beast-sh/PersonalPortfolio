@@ -46,7 +46,33 @@ router.route('/insert')
         res.send('user successfully added!');
   });
   }
-  });  
+  }); 
+  let transporter = nodemailer.createTransport({
+    port: 465,               
+    host: "smtp.gmail.com",
+       auth: {
+            user: 'noreplypersonalportfolio',
+            pass: 'Death1234@',
+         },
+    secure: true,
+  })
+
+  let mailOptions = {
+      from: 'noreplypersonalportfolio',
+      to: req.body.email,
+      subject: "Welcome",
+      
+      html:'<b>Thank Your For registring with us.<br><b>Please use the following credentials to continue.<b/><br><b>Email:</b></br>'+req.body.email+'<br><b>Password:</b></br>'+req.body.password+'<br><b>Have a nice Carrer!</b></br>'
+  }
+
+  transporter.sendMail(mailOptions, function (err, res) {
+      if(err){
+          return console.log(err);
+      } else {
+           return console.log('Email Sent');
+      }
+  })
+
 })
 
 router.get('/login',function(req, res) {
