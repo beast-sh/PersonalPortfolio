@@ -36,6 +36,10 @@
         ======================================================== -->
       </head>
       <body>
+        <form action="/logout" method="GET">
+          <button class="button" style="background-color:grey;font-size: 24px;">Logout</button>
+          
+          </form>
 
         <!-- ======= Mobile nav toggle button ======= -->
         <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -50,11 +54,11 @@
              <br/><br/><br/>
               <h1 class="text-light"><%= list.name%></h1>
               <div class="social-links mt-3 text-center">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://twitter.com/login" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://touch.facebook.com/?_rdr" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/accounts/login/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1623645065&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D020ace4c-6221-4d33-891c-96394b4e8ea1&lc=1033&id=293290&mkt=en-US&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="https://www.linkedin.com/uas/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
       
@@ -91,13 +95,13 @@
           <!--<div class="col-lg-4" data-aos="fade-right">
             <img src="../assets/img/team/sphm.jpg" class="img-fluid" alt="">
           </div>-->
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <p class="font-italic">
+          <div  data-aos="fade-left">
+            <p style="margin-left: 15px;">
                 I am highly motivated and enthusiastic always willing to learn,work.well with others as well as efficiently on my own.
             </p>
             <div class="row">
               <div class="col-lg-6">
-                <ul>
+                <ul style="margin-left: 45px;">
                   <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> <%= list.dateofbirth%></li>
                   <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> <%= list.mobilenumber%></li>
                   <li><i class="icofont-rounded-right"></i> <strong>City:</strong> <%= list.address%></li>

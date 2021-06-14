@@ -282,7 +282,7 @@ class Add extends React.Component {
         </fieldset>
   <div className='button-center'>
           <br/>
-          <Button bsStyle="success" bsSize="large" onClick={this.onClick}>Add New Expense</Button>
+          <Button bsStyle="success" bsSize="large" onClick={this.onClick}>Add New User</Button>
          </div>
             </Modal>
           </div>
@@ -296,7 +296,7 @@ class Add extends React.Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          contentLabel="Add Expense"
+          contentLabel="Add User"
           className="Modal">
   <div className='button-center'>
           <h3>{this.state.messageFromServer}</h3>

@@ -1071,4 +1071,10 @@ body {
       padding-right: 20px 15px;
     }
   }
+
+  .button {
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+  }
   
